@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/HomeDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Home"
+            android:textSize="@dimen/ukuranMenu"
+            />
+
+        <TextView
+            android:id="@+id/DaftarDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Daftar"
+            android:textSize="@dimen/ukuranMenu"
+            />
+
+        <TextView
+            android:id="@+id/HistoryDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/History"
+            android:textSize="@dimen/ukuranMenu"
+            />
+
+        <TextView
+            android:id="@+id/PengaturanDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Pengaturan"
+            android:textSize="@dimen/ukuranMenu"
+            />
+
+        <TextView
+            android:id="@+id/ExitDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Exit"
+            android:textSize="@dimen/ukuranMenu"
+            />
+
+
+
+
+    </LinearLayout>
+</FrameLayout>
