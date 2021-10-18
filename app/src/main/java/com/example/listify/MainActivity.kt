@@ -12,13 +12,13 @@ import androidx.fragment.app.FragmentResultListener
 import com.example.listify.databinding.ActivityMainBinding
 import kotlin.math.log
 
-class MainActivity : AppCompatActivity(), FragmentResultListener {
+class MainActivity : AppCompatActivity(), FragmentResultListener, InterfaceMainActivity {
 
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
     private lateinit var mainFragment: main
+    private lateinit var adapter:MainAdapter
     private lateinit var presenter: MoviesPresenter
-    private var adapter: MainAdapter = MainAdapter(this,presenter)
 
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +42,10 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
             .add(R.id.fragment_container,this.mainFragment)
             .commit()
 
+        this.presenter= MoviesPresenter()
+        this.adapter= MainAdapter(this,this.presenter)
         this.fm.setFragmentResultListener("routeListener",this,this)
-        binding.fragmentContainer.adapter.getItem(1)
+        binding.fragmentContainer.adapter(this)
 
 
 
@@ -63,6 +65,19 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
         }
 
 
+    }
+
+    override fun updateList() {
+        TODO("Not yet implemented")
+    }
+
+    override fun resetAddForm() {
+        TODO("Not yet implemented")
+    }
+
+    override fun delete() {
+        TODO("Not yet implemented")
+    }
 
 
-}}
+}
