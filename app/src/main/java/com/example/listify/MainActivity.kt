@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
     private lateinit var mainFragment: main
-    private lateinit var adapter: MainAdapter
+    private lateinit var presenter: MoviesPresenter
+    private var adapter: MainAdapter = MainAdapter(this,presenter)
 
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
             .commit()
 
         this.fm.setFragmentResultListener("routeListener",this,this)
-        binding.fragmentContainer.adapter(this)
+        binding.fragmentContainer.adapter.getItem(1)
 
 
 
