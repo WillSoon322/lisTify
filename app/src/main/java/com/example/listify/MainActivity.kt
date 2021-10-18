@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
     private lateinit var mainFragment: main
+    private lateinit var adapter: MainAdapter
 
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
@@ -63,4 +64,4 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
 
 
 
-}
+}}
