@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentResultListener
 import com.example.listify.databinding.ActivityMainBinding
 import kotlin.math.log
 
-class MainActivity : AppCompatActivity(), FragmentResultListener, InterfaceMainActivity {
+class MainActivity : AppCompatActivity(), FragmentResultListener {
 
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
@@ -26,26 +26,26 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, InterfaceMainA
 
         this.binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        this.setSupportActionBar(binding.toolbar)
+   //     this.setSupportActionBar(binding.toolbar)
 
 
-        var ab :ActionBarDrawerToggle
-        ab= ActionBarDrawerToggle(this,binding.drawerLayout,binding.toolbar,R.string.Open,R.string.Close)
-        binding.drawerLayout.addDrawerListener(ab)
-        ab.syncState()
+       // var ab :ActionBarDrawerToggle
+       // ab= ActionBarDrawerToggle(this,binding.drawerLayout,binding.toolbar,R.string.Open,R.string.Close)
+      //  binding.drawerLayout.addDrawerListener(ab)
+       // ab.syncState()
 
-        this.mainFragment=main.newInstance("main")
+     //   this.mainFragment=main.newInstance("main")
 
 
-        this.fm=getSupportFragmentManager()
-        this.fm.beginTransaction()
-            .add(R.id.fragment_container,this.mainFragment)
-            .commit()
+//        this.fm=getSupportFragmentManager()
+//        this.fm.beginTransaction()
+//            .add(R.id.fragment_container,this.mainFragment)
+//            .commit()
 
-        this.presenter= MoviesPresenter()
-        this.adapter= MainAdapter(this,this.presenter)
-        this.fm.setFragmentResultListener("routeListener",this,this)
-        binding.fragmentContainer.adapter(this)
+//        this.presenter= MoviesPresenter()
+//        this.adapter= MainAdapter(this,this.presenter)
+//        this.fm.setFragmentResultListener("routeListener",this,this)
+//        binding.fragmentContainer.adapter(this)
 
 
 
@@ -67,17 +67,6 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, InterfaceMainA
 
     }
 
-    override fun updateList() {
-        TODO("Not yet implemented")
-    }
-
-    override fun resetAddForm() {
-        TODO("Not yet implemented")
-    }
-
-    override fun delete() {
-        TODO("Not yet implemented")
-    }
 
 
 }
