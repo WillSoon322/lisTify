@@ -7,31 +7,31 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <!--header-->
         <LinearLayout
-            android:id="@+id/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:id="@+id/Header">
 
             <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/round_button"
-                android:src="@drawable/ic_menu2" />
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_menu2"/>
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="7"
-                android:src="@drawable/banner" />
+                android:src="@drawable/banner"
+                android:layout_gravity="center_vertical"/>
 
             <ImageButton
                 android:layout_width="75dp"
@@ -39,118 +39,17 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/round_button"
-                android:src="@drawable/ic_person" />
+                android:src="@drawable/ic_person"/>
 
         </LinearLayout>
 
         <!--Content-->
-        <!--poster-->
+            <!--poster-->
         <ImageView
-            android:id="@+id/movie_poster"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_below="@+id/Header"
-            android:layout_marginTop="25dp"
-            android:src="@color/black" />
-
-        <TextView
-            android:id="@+id/Movie_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/movie_poster"
-            android:text="NAMA MOVIE"
-            android:textSize="35dp" />
-
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Movie_title"
-            android:text="Status (watched, not yet watched, not finished)" />
-
-        <ImageView
-            android:id="@+id/star1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:src="@drawable/ic_star_full" />
-
-        <ImageView
-            android:id="@+id/star2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star1"
-            android:src="@drawable/ic_star_full" />
-
-        <ImageView
-            android:id="@+id/star3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star2"
-            android:src="@drawable/ic_star_full" />
-
-        <ImageView
-            android:id="@+id/star4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star3"
-            android:src="@drawable/ic_star_full" />
-
-        <ImageView
-            android:id="@+id/star5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star4"
-            android:src="@drawable/ic_star_full" />
-
-        <TextView
-            android:id="@+id/synopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/star1"
-            android:layout_margin="10dp"
-            android:background="@color/teal_200"
-            android:text="After returning from their honeymoon and showing home movies to their friends, Shrek and Fiona learn that her parents have heard that she has married her true love and wish to invite him to their kingdom, called Far Far Away. The catch is: Fiona's parents are unaware of the curse that struck their daughter and have assumed she married Prince Charming, not a 700-pound ogre with horrible hygiene and a talking donkey pal." />
-
-        <LinearLayout
-            android:id="@+id/button_linear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/synopsis"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/RateBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="7dp"
-                android:layout_weight="1"
-                android:text="RATE THIS MOVIE" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="14dp"
-                android:layout_weight="1"
-                android:text="WRITE A COMMENT" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button_linear"
-            android:layout_margin="10dp"
-            android:background="@color/cardview_dark_background"
-            android:text="INI ISINYA BUAT KOMEN YANG DITULIS SAMA USER TENTANG MOVIENYA"
-            android:textColor="@color/white" />
+            android:layout_height="220dp"
+            android:src="@color/black"
+            android:layout_alignTop="@+id/Header"/>
 
     </RelativeLayout>
 

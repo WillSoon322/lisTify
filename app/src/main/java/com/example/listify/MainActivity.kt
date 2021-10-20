@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.listify.databinding.ActivityMainBinding
 import kotlin.math.log
 
-class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickListener {
+class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickListener,IMainActivity {
 
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
 
         this.binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.toolbar.setOnClickListener(this)
+       // binding.toolbar.setOnClickListener(this)
 
 
        // var ab :ActionBarDrawerToggle
@@ -45,10 +45,7 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
             .add(R.id.fragment,this.mainFragment)
             .commit()
 
-//        this.presenter= MoviesPresenter()
-//        this.adapter= MainAdapter(this,this.presenter)
-//        this.fm.setFragmentResultListener("routeListener",this,this)
-//        binding.fragmentContainer.adapter(this)
+
 
 
 
@@ -97,6 +94,10 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
 
         }
 
+    }
+
+    override fun dataChanged(change: Any?) {
+        TODO("Not yet implemented")
     }
 
 
