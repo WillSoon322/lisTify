@@ -69,19 +69,22 @@
                 android:layout_height="75dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp"
+                android:onClick="onClickNavigation"/>
 
             <ImageButton
+                android:id="@+id/HomeBtn"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:id="@+id/HomeBtn"
-                android:layout_toLeftOf="@+id/AddBtn"/>
+                android:layout_toLeftOf="@+id/AddBtn"
+                android:onClick="onClickNavigation"/>
 
             <ImageButton
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:id="@+id/ListBtn"
-                android:layout_toRightOf="@+id/AddBtn"/>
+                android:layout_toRightOf="@+id/AddBtn"
+                android:onClick="onClickNavigation"/>
 
         </RelativeLayout>
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentResultListener
 import androidx.fragment.app.FragmentTransaction
 import com.example.listify.databinding.ActivityMainBinding
+import com.example.listify.databinding.FragmentListBinding
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickListener,IMainActivity {
@@ -18,15 +19,14 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
     private lateinit var mainFragment: main
-    private lateinit var adapter:MainAdapter
-    private lateinit var presenter: MoviesPresenter
     private lateinit var ft:FragmentTransaction;
     private lateinit var fragmentList:list
+    private lateinit var fl:FragmentListBinding;
 
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
 
-
+        this.fl= FragmentListBinding.inflate(layoutInflater);
         this.binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
        // binding.toolbar.setOnClickListener(this)
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
       //  binding.drawerLayout.addDrawerListener(ab)
        // ab.syncState()
 
-        this.mainFragment=main.newInstance("main") //home
-        this.fragmentList=list.newInstance("list");
+        this.mainFragment=main.newInstance("satu") //home
+        this.fragmentList=list (this);
 
         this.fm=getSupportFragmentManager()
         this.fm.beginTransaction()
@@ -64,13 +64,15 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
         for(frag in this.fm.fragments){
             ft.hide(frag)
         }
-
         if (clicked.id==R.id.ListBtn){
             if(this.fragmentList.isAdded){
                 ft.show(this.fragmentList)
             }else{
                 ft.add(R.id.fragment,this.fragmentList)
             }
+
+
+
 
         }else if(clicked.id==R.id.HomeBtn) {
             if (this.mainFragment.isAdded) {

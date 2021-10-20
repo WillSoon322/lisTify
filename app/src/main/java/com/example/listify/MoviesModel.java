@@ -6,9 +6,9 @@ public class MoviesModel {
     private String judul=null;
     private String deskripsi=null;
     private int bintang =-1;  //0 - 5
-    private byte status=-1; // 0 =blom ditonton , 1= sedang , 2 =sudah
+    private int status=-1; // 0 =blom ditonton , 1= sedang , 2 =sudah
 
-    public MoviesModel(String judul, String deskripsi, int bintang, byte status){
+    public MoviesModel(String judul, String deskripsi, int bintang, int status){
         this.judul=judul;
         this.deskripsi=deskripsi;
         this.bintang=bintang;
@@ -29,8 +29,19 @@ public class MoviesModel {
         return this.bintang;
     }
 
-    public byte getStatus(){
-        return this.status;
+    public String getStatus(){
+        int status=this.status;
+        switch (status){
+            case 1:
+                return "Sedang ditonton";
+            case 2:
+                return "Selesai ditonton";
+            default:
+                return "Belum ditonton";
+        }
+
+
+
     }
 
 
