@@ -6,58 +6,66 @@
     tools:context=".main">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOG YOUR MOVIE, TV SHOWS AND BE HAPPY..."
+        android:textSize="20dp"
+        android:layout_marginTop="13dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:textColor="@color/black"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            >
+        <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SEARCH YOUR MOVIE/TV SHOWS HERE..."
+        android:textSize="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+            android:lines="1"/>
 
-            <Button
-                android:id="@+id/movies_Button"
-                android:layout_width="@dimen/SizeButton"
-                android:layout_height="match_parent"
-                android:text="@string/buttonMovies"
-                android:layout_marginRight="10dp"
-                android:onClick="onClickNavigation"
-                />
-
-            <Button
-                android:id="@+id/TV_Series_Button"
-                android:layout_width="@dimen/SizeButton"
-                android:layout_height="match_parent"
-                android:text="@string/buttonTVSeries"
-                android:layout_marginLeft="10dp"
-                android:onClick="onClickNavigation"
-                />
-        </LinearLayout>
         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
-        <Button
-            android:id="@+id/filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filter"/>
+        android:layout_marginTop="15dp">
 
-            <Button
-                android:id="@+id/sort"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Sort"/>
+            <VideoView
+                android:layout_width="0dp"
+                android:layout_height="350dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="5" />
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
+                    android:src="@color/teal_200"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="7dp"/>
 
-
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
+                    android:src="@color/purple_200"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="7dp"/>
+            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </FrameLayout>

@@ -9,16 +9,19 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentResultListener
+import androidx.fragment.app.FragmentTransaction
 import com.example.listify.databinding.ActivityMainBinding
 import kotlin.math.log
 
-class MainActivity : AppCompatActivity(), FragmentResultListener {
+class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickListener {
 
     private lateinit var  binding : ActivityMainBinding
     private lateinit var fm:FragmentManager
     private lateinit var mainFragment: main
     private lateinit var adapter:MainAdapter
     private lateinit var presenter: MoviesPresenter
+    private lateinit var ft:FragmentTransaction;
+    private lateinit var fragmentList:list
 
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
 
         this.binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-   //     this.setSupportActionBar(binding.toolbar)
+        binding.toolbar.setOnClickListener(this)
 
 
        // var ab :ActionBarDrawerToggle
@@ -34,13 +37,13 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
       //  binding.drawerLayout.addDrawerListener(ab)
        // ab.syncState()
 
-     //   this.mainFragment=main.newInstance("main")
+        this.mainFragment=main.newInstance("main") //home
+        this.fragmentList=list.newInstance("list");
 
-
-//        this.fm=getSupportFragmentManager()
-//        this.fm.beginTransaction()
-//            .add(R.id.fragment_container,this.mainFragment)
-//            .commit()
+        this.fm=getSupportFragmentManager()
+        this.fm.beginTransaction()
+            .add(R.id.fragment,this.mainFragment)
+            .commit()
 
 //        this.presenter= MoviesPresenter()
 //        this.adapter= MainAdapter(this,this.presenter)
@@ -58,15 +61,43 @@ class MainActivity : AppCompatActivity(), FragmentResultListener {
 
 
     fun onClickNavigation(clicked: View){
-        if (clicked.id==R.id.movies_Button){
-            Log.d("true", "haha: ")
-        }else{
-            Log.d("false", "haha: ")
+            this.fm=supportFragmentManager;
+            this.ft=fm.beginTransaction();
+        //AddBtn,HomeBtn,ListBtn
+        for(frag in this.fm.fragments){
+            ft.hide(frag)
         }
 
+        if (clicked.id==R.id.ListBtn){
+            if(this.fragmentList.isAdded){
+                ft.show(this.fragmentList)
+            }else{
+                ft.add(R.id.fragment,this.fragmentList)
+            }
 
+        }else if(clicked.id==R.id.HomeBtn) {
+            if (this.mainFragment.isAdded) {
+                ft.show(this.mainFragment)
+            } else {
+                ft.add(R.id.fragment, this.mainFragment)
+            }
+
+
+        }
+        ft.commit();
     }
 
+
+
+
+
+    override fun onClick(v: View?) {
+        if(v==binding.toolbar){
+            //buat drawer
+
+        }
+
+    }
 
 
 }
