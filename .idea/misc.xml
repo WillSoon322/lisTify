@@ -12,10 +12,11 @@
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/drawable/round_button.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_add__movie.xml" value="0.2" />
+        <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_add__movie.xml" value="0.152" />
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_left_drawer.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_list.xml" value="0.19701086956521738" />
         <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_movie_page.xml" value="0.24295432458697766" />
+        <entry key="..\:/Users/Wilson Nathanael/AndroidStudioProjects/lisTify/app/src/main/res/layout/fragment_rate_modal.xml" value="0.4" />
       </map>
     </option>
   </component>

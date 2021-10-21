@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Rate_modal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="143dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:id="@+id/rating_group">
+
+            <ImageButton
+                android:id="@+id/rating_star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty"/>
+
+            <ImageButton
+                android:id="@+id/rating_star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageButton
+                android:id="@+id/rating_star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageButton
+                android:id="@+id/rating_star4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageButton
+                android:id="@+id/rating_star5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_empty"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rating_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="SUBMIT"/>
+
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:text="X"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

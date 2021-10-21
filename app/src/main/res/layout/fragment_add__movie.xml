@@ -17,28 +17,38 @@
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp">
 
-            <RadioButton
-                android:id="@+id/radio_Movie"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/label_movie"
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Movie"
-                android:layout_marginRight="35dp"/>
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radio_Series"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/radio_Movie"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
 
-            <TextView
-                android:id="@+id/label_series"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tv Series"/>
+                <TextView
+                    android:id="@+id/label_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie"
+                    android:layout_marginRight="35dp"/>
+
+                <RadioButton
+                    android:id="@+id/radio_Series"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/label_series"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tv Series"/>
+
+            </RadioGroup>
+
+
 
         </LinearLayout>
 
