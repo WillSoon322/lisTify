@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentResultListener
 import androidx.fragment.app.FragmentTransaction
 import com.example.listify.databinding.ActivityMainBinding
 import com.example.listify.databinding.FragmentListBinding
+import java.util.*
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickListener,IMainActivity {
@@ -21,15 +22,15 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
     private lateinit var mainFragment: main
     private lateinit var ft:FragmentTransaction;
     private lateinit var fragmentList:list
-    private lateinit var fl:FragmentListBinding;
+    private lateinit var addF :addFragment
 
 
-    private lateinit var adapterMovie:MoviesListAdapter
-    private lateinit var moviesPresenter: MoviesPresenter;
+
+
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
 
-        this.fl= FragmentListBinding.inflate(layoutInflater);
+
         this.binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
        // binding.toolbar.setOnClickListener(this)
@@ -40,24 +41,29 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
       //  binding.drawerLayout.addDrawerListener(ab)
        // ab.syncState()
 
+
+        // inisialisasi fragment-fragment
         this.mainFragment=main.newInstance("satu") //home
         this.fragmentList=list (this);
+        this.addF=addFragment();
+
+
+
+
 
         this.fm=getSupportFragmentManager()
         this.fm.beginTransaction()
             .add(R.id.fragment,this.mainFragment)
             .commit()
 
-//        this.moviesPresenter=MoviesPresenter(this)
-//        this.adapterMovie= MoviesListAdapter(this,this.moviesPresenter)
-//        this.fl.daftarMovies.adapter=this.adapterMovie
+        this.fm.setFragmentResultListener("changePage",this,this)
 
 
 
     }
 
     override fun onFragmentResult(requestKey: String, result: Bundle) {
-        TODO("Not yet implemented")
+
     }
 
 
@@ -65,32 +71,34 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
             this.fm=supportFragmentManager;
             this.ft=fm.beginTransaction();
         //AddBtn,HomeBtn,ListBtn
-        for(frag in this.fm.fragments){
-            ft.hide(frag)
-        }
+        hideall(this.fm, this.ft)
         if (clicked.id==R.id.ListBtn){
             if(this.fragmentList.isAdded){
                 ft.show(this.fragmentList)
             }else{
                 ft.add(R.id.fragment,this.fragmentList)
             }
-
-
-
-
         }else if(clicked.id==R.id.HomeBtn) {
             if (this.mainFragment.isAdded) {
                 ft.show(this.mainFragment)
             } else {
                 ft.add(R.id.fragment, this.mainFragment)
             }
-
-
+        }else if(clicked.id==R.id.AddBtn){
+            if(this.addF.isAdded){
+                ft.show(this.addF)
+            }else{
+                ft.add(R.id.fragment, this.addF)
+            }
         }
         ft.commit();
     }
 
-
+    fun hideall(fm: FragmentManager, ft:FragmentTransaction){
+        for(frag in this.fm.fragments){
+            ft.hide(frag)
+        }
+    }
 
 
 
@@ -103,6 +111,23 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
     }
 
     override fun dataChanged(change: Any?) {
+    }
+
+
+
+    override fun openDetail(pos: Int, x: Any?) {
+
+        this.fm=supportFragmentManager;
+        this.ft=fm.beginTransaction();
+        hideall(this.fm, this.ft)
+
+        var x = MoviePage(pos, x )
+        ft.add(R.id.fragment, x)
+
+
+
+
+        this.ft.commit()
     }
 
 

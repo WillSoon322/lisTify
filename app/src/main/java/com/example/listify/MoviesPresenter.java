@@ -16,6 +16,15 @@ public class MoviesPresenter {
         return this.movies;
     }
 
+    public MoviesModel getMovie(int pos){
+        return movies.get(pos);
+    }
+
+    public void openMovie(int posision){
+        MoviesModel x=getMovie(posision);
+        ui.openDetail(posision, x);
+    }
+
 
 
 
