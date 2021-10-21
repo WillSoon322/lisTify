@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
     private lateinit var fragmentList:list
     private lateinit var fl:FragmentListBinding;
 
+
+    private lateinit var adapterMovie:MoviesListAdapter
+    private lateinit var moviesPresenter: MoviesPresenter;
     override fun onCreate(savedInstanceState: Bundle ?) {
         super.onCreate(savedInstanceState)
 
@@ -45,8 +48,9 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
             .add(R.id.fragment,this.mainFragment)
             .commit()
 
-
-
+//        this.moviesPresenter=MoviesPresenter(this)
+//        this.adapterMovie= MoviesListAdapter(this,this.moviesPresenter)
+//        this.fl.daftarMovies.adapter=this.adapterMovie
 
 
 
@@ -99,7 +103,6 @@ class MainActivity : AppCompatActivity(), FragmentResultListener, View.OnClickLi
     }
 
     override fun dataChanged(change: Any?) {
-        TODO("Not yet implemented")
     }
 
 

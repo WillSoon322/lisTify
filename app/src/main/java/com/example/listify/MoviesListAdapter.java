@@ -45,9 +45,10 @@ public class MoviesListAdapter extends BaseAdapter{
     }
 
     @Override
-    public ViewGroup getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         MoviesListBinding bindingMovies;
         ViewHolder vh;
+        Log.d("test", "getView: ");
         if(convertView==null){
             bindingMovies=MoviesListBinding.inflate(this.activity.getLayoutInflater());
             convertView=bindingMovies.getRoot();

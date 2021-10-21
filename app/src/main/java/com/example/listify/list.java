@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.listify.databinding.FragmentListBinding;
 
@@ -15,28 +16,25 @@ public class list extends Fragment {
     private MainActivity activity;
     private MoviesPresenter moviesP;
     private MoviesListAdapter moviesA;
-    private FragmentListBinding binding;
 
 
     public list(MainActivity a) {
+        this.activity=a;
         // Required empty public constructor
     }
-
-
-    // TODO: Rename and change types and number of parameters
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        this.binding=FragmentListBinding.inflate(getLayoutInflater());
+        View v=inflater.inflate(R.layout.fragment_list, container, false);
         this.moviesP= new MoviesPresenter(activity);
         this.moviesA= new MoviesListAdapter(activity,this.moviesP);
-        this.binding.listView.setAdapter(moviesA);
+        ListView list=v.findViewById(R.id.daftar_movies);
+        list.setAdapter(this.moviesA);
 
 
 
-        return inflater.inflate(R.layout.fragment_list, container, false);
+        return v;
     }
 }
