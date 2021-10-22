@@ -8,8 +8,7 @@ public class MoviesPresenter {
 
     public MoviesPresenter(IMainActivity ui){
         this.ui=ui;
-        TEMPstorage db=new TEMPstorage();
-        this.movies=db.getArr();
+        this.movies=ui.fetchData();
     }
 
     public ArrayList<MoviesModel> getData(){

@@ -83,14 +83,13 @@ class ViewHolder implements View.OnClickListener {
     }
 
     public void setText(){
-        Log.d(moviesModelEntitiy.getJudul(), "setText: ");
         binding.MoviesJudul.setText(moviesModelEntitiy.getJudul());
         binding.MoviesStatus.setText(moviesModelEntitiy.getStatus());
         binding.MoviesDeskripsi.setText(moviesModelEntitiy.getDeskripsi());
         int skor=moviesModelEntitiy.getBintang();
 
         for(int i=0;i<skor;i++){
-            this.arr[i].setImageResource(android.R.drawable.star_on);
+            this.arr[i].setImageResource(R.drawable.ic_star_full);
         }
     }
 
