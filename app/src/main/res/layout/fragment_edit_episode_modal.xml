@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".EditEpisodeModal">
+
+    <RelativeLayout
+        android:id="@+id/accordion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/judul_episode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Judul Episode"
+            />
+
+        <RadioGroup
+            android:id="@+id/radio_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/judul_episode"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/belumditonton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum ditonton" />
+
+            <RadioButton
+                android:id="@+id/sudahditonton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah ditonton" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radio_status"
+            android:layout_centerHorizontal="true"
+            android:text="submit" />
+
+    </RelativeLayout>
+
+</FrameLayout>

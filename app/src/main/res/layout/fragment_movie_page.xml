@@ -3,123 +3,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoviePage">
-    <RelativeLayout
+    android:layout_marginBottom="85dp"
+    >
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp">
 
-        <ImageView
-            android:id="@+id/movie_poster"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_marginTop="25dp"
-            android:src="@color/black" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/Movie_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/movie_poster"
-            android:text="NAMA MOVIE"
-            android:textSize="35dp" />
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="10dp"
+                android:src="@color/black" />
 
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Movie_title"
-            android:text="Status (watched, not yet watched, not finished)" />
-
-        <ImageView
-            android:id="@+id/star1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:src="@drawable/ic_star_empty" />
-
-        <ImageView
-            android:id="@+id/star2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star1"
-            android:src="@drawable/ic_star_empty" />
-
-        <ImageView
-            android:id="@+id/star3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star2"
-            android:src="@drawable/ic_star_empty" />
-
-        <ImageView
-            android:id="@+id/star4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star3"
-            android:src="@drawable/ic_star_empty" />
-
-        <ImageView
-            android:id="@+id/star5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/desc"
-            android:layout_toRightOf="@id/star4"
-            android:src="@drawable/ic_star_empty"/>
-
-        <TextView
-            android:id="@+id/synopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/star1"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/teal_200"
-            android:text="After returning from their honeymoon and showing home movies to their friends, Shrek and Fiona learn that her parents have heard that she has married her true love and wish to invite him to their kingdom, called Far Far Away. The catch is: Fiona's parents are unaware of the curse that struck their daughter and have assumed she married Prince Charming, not a 700-pound ogre with horrible hygiene and a talking donkey pal." />
-
-        <LinearLayout
-            android:id="@+id/button_linear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/synopsis"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/RateBtn"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/Movie_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="7dp"
-                android:layout_weight="1"
-                android:text="RATE THIS MOVIE" />
+                android:layout_below="@id/movie_poster"
+                android:text="NAMA MOVIE"
+                android:textSize="35dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"/>
 
-            <Button
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="14dp"
-                android:layout_weight="1"
-                android:text="WRITE A COMMENT" />
+                android:layout_below="@+id/Movie_title"
+                android:text="Status (watched, not yet watched, not finished)"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp"/>
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/desc"
+                android:src="@drawable/ic_star_empty"
+                android:layout_marginLeft="15dp"/>
 
-        <TextView
-            android:id="@+id/comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button_linear"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/cardview_dark_background"
-            android:text="INI ISINYA BUAT KOMEN YANG DITULIS SAMA USER TENTANG MOVIENYA"
-            android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/desc"
+                android:layout_toRightOf="@id/star1"
+                android:src="@drawable/ic_star_empty" />
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/desc"
+                android:layout_toRightOf="@id/star2"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/desc"
+                android:layout_toRightOf="@id/star3"
+                android:src="@drawable/ic_star_empty" />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/desc"
+                android:layout_toRightOf="@id/star4"
+                android:src="@drawable/ic_star_empty" />
+
+            <TextView
+                android:id="@+id/synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/star1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:background="@color/slightDarkWhite"
+                android:text="After returning from their honeymoon and showing home movies to their friends, Shrek and Fiona learn that her parents have heard that she has married her true love and wish to invite him to their kingdom, called Far Far Away. The catch is: Fiona's parents are unaware of the curse that struck their daughter and have assumed she married Prince Charming, not a 700-pound ogre with horrible hygiene and a talking donkey pal."
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/button_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/synopsis"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/RateBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_weight="1"
+                    android:text="RATE THIS MOVIE" />
+
+                <Button
+                    android:id="@+id/editMovie"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_weight="1"
+                    android:text="REVIEW" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button_linear"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cardview_dark_background"
+                android:text="INI ISINYA BUAT KOMEN YANG DITULIS SAMA USER TENTANG MOVIENYA"
+                android:textColor="@color/white" />
+
+            <FrameLayout
+                android:id="@+id/fragmentmovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 
 </FrameLayout>

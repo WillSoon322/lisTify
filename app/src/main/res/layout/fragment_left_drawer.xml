@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red">
+    android:background="@color/white">
 
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <Button
             android:id="@+id/HomeDrawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:textSize="@dimen/ukuranMenu"
             />
 
-        <TextView
+        <Button
             android:id="@+id/DaftarDrawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:textSize="@dimen/ukuranMenu"
             />
 
-        <TextView
+        <Button
             android:id="@+id/HistoryDrawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,15 +36,9 @@
             android:textSize="@dimen/ukuranMenu"
             />
 
-        <TextView
-            android:id="@+id/PengaturanDrawer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Pengaturan"
-            android:textSize="@dimen/ukuranMenu"
-            />
 
-        <TextView
+
+        <Button
             android:id="@+id/ExitDrawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

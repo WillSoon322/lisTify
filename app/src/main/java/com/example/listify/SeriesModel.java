@@ -2,38 +2,45 @@ package com.example.listify;
 
 
 
-public class MoviesModel {
+public class SeriesModel {
     private int id=-1;
     private String judul="";
     private int bintang =0;  //0 - 5
-    private int status=0; // 0 =sedang , 1= drop , 2 =sudah
+    private int status=0; // 0 =sedang , 2= drop , 1 =sudah
     private String synopsis="";
     private String comment="";
+    private int number_episode=0;
     private String foto;
 
-    public MoviesModel(String judul,String synopsis,String foto){
+    public SeriesModel(String judul,String synopsis,int number_episode,String foto){
+        this.number_episode=number_episode;
         this.judul=judul;
         this.synopsis=synopsis;
         this.foto=foto;
     }
 
-    public MoviesModel(int id,String judul, int bintang, int status,String synopsis,String comment, String foto){
+    public SeriesModel(int id,String judul, int bintang, int status,String synopsis,String comment,int Number_episode, String foto){
         this.id=id;
         this.judul=judul;
         this.bintang=bintang;
         this.status=status;
         this.synopsis=synopsis;
         this.comment=comment;
+        this.number_episode=Number_episode;
         this.foto=foto;
     }
 
-
+    public int getId(){
+        return this.id;
+    }
 
     public String getJudul(){
         return this.judul;
     }
 
-
+    public int getNumber_episode(){
+        return this.number_episode;
+    }
 
     public int getBintang(){
         return this.bintang;
@@ -54,12 +61,11 @@ public class MoviesModel {
     public int getStatusData(){
         return this.status;
     }
+
     public String getSynopsis(){
         return this.synopsis;
     }
-    public int getId(){
-        return this.id;
-    }
+
     public String getComment(){
         return this.comment;
     }
@@ -67,7 +73,6 @@ public class MoviesModel {
     public String getFoto(){
         return this.foto;
     }
-
 
 
 

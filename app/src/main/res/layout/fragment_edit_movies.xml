@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/top_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <RadioGroup
+                    android:id="@+id/status_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/status_finish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="Finished"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/ongoing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="On Going"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/droped"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="Dropped"
+                        android:textColor="@color/black" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/review_edit"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="15dp"
+                    android:text="Delete " />
+
+                <LinearLayout
+                    android:id="@+id/review_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/status_select"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/review"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="6"
+                        android:backgroundTint="@android:color/holo_green_light"
+                        android:hint="Review Movie"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_edit"
+                android:id="@+id/middle_edit">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/judul_edit">
+
+                    <EditText
+                        android:id="@+id/judul"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:hint="Judul Movie"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="@android:color/holo_green_light"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/judul_edit"
+                    android:id="@+id/synopsis_edit">
+
+                    <EditText
+                        android:id="@+id/sinopsis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="6"
+                        android:backgroundTint="@android:color/holo_green_light"
+                        android:hint="Synopsis Movie"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/synopsis_edit"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/add"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="6"
+                        android:minHeight="200dp"
+                        android:src="@drawable/ic_add" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/open_episode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/middle_edit"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="Open Episode" />
+
+            <Button
+                android:id="@+id/rating_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/open_episode"
+                android:layout_marginHorizontal="20dp"
+                android:text="Submit Changes" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+</FrameLayout>

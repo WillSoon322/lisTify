@@ -3,11 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    tools:context=".Filter">
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="143dp">
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -49,23 +54,45 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/submit"
+        <CheckBox
+            android:id="@+id/status_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rating_group"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="SUBMIT" />
+            android:text="FINISHED WATCHING"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status_finish"
+            android:id="@+id/status_on_going"
+            android:text="CURRENTLY WATCHING"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status_on_going"
+            android:id="@+id/status_drop"
+            android:text="DROPPED"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/close"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="X"
-            android:textColor="@color/black"/>
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status_drop"
+            android:layout_centerHorizontal="true"
+            android:text="APPLY FILTER"
+            android:layout_marginVertical="7dp"/>
+
+
 
     </RelativeLayout>
 

@@ -7,37 +7,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOG YOUR MOVIE, TV SHOWS AND BE HAPPY..."
-        android:textSize="20dp"
-        android:layout_marginTop="13dp"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp"
-        android:textColor="@color/black"/>
-
-        <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="SEARCH YOUR MOVIE/TV SHOWS HERE..."
-        android:textSize="10dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-            android:lines="1"/>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="LOG YOUR MOVIE, TV SHOWS AND BE HAPPY..."
+            android:textSize="26sp"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
 
-            <VideoView
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="350dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/poster3"
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="7dp"
                 android:layout_weight="5" />
@@ -52,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
-                    android:src="@color/teal_200"
+                    android:src="@drawable/poster"
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="14dp"
                     android:layout_marginBottom="7dp"/>
@@ -61,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
-                    android:src="@color/purple_200"
+                    android:src="@drawable/poster2"
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="14dp"
                     android:layout_marginTop="7dp"/>

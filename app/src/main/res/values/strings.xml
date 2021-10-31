@@ -15,4 +15,8 @@
     <string name="buttonTVSeries">TV Series</string>
     <string name="filter">Filter</string>
     <string name="Sort">Sort</string>
+    <string name="Tidak">Tidak</string>
+    <string name="Ya">Ya</string>
+    <string name="confirm">Yakin hapus</string>
+    <string name="confirmTitle">Konfirmasi Hapus</string>
 </resources>

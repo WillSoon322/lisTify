@@ -1,36 +1,35 @@
 package com.example.listify;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.util.Log;
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
-
-import androidx.fragment.app.FragmentManager;
 
 import com.example.listify.databinding.MoviesListBinding;
 
 import java.util.ArrayList;
 
 public class MoviesListAdapter extends BaseAdapter{
-        private Activity activity;
+        private list list;
         private MoviesPresenter mp;
         private ArrayList<MoviesModel> film;
 
-    public MoviesListAdapter(Activity activity, MoviesPresenter mp){
-        this.activity=activity;
+    public MoviesListAdapter(list list, MoviesPresenter mp){
+        this.list=list;
         this.mp=mp;
-        updateFoods(mp.getData());
+        insertMovie(mp.getData());
     }
 
-    public void updateFoods(ArrayList<MoviesModel> arr){
+    public void insertMovie(ArrayList<MoviesModel> arr){
+        this.film=arr;
+    }
+
+    public void updateMovie(ArrayList<MoviesModel> arr){
+        this.film=null;
         this.film=arr;
         this.notifyDataSetChanged();
     }
-
 
     @Override
     public int getCount() {
@@ -52,7 +51,7 @@ public class MoviesListAdapter extends BaseAdapter{
         MoviesListBinding bindingMovies;
         ViewHolder vh;
         if(convertView==null){
-            bindingMovies=MoviesListBinding.inflate(this.activity.getLayoutInflater());
+            bindingMovies=MoviesListBinding.inflate(this.list.getLayoutInflater());
             convertView=bindingMovies.getRoot();
             vh=new ViewHolder(bindingMovies,position,getItem(position),this.mp);
             convertView.setTag(bindingMovies);
@@ -85,7 +84,12 @@ class ViewHolder implements View.OnClickListener {
     public void setText(){
         binding.MoviesJudul.setText(moviesModelEntitiy.getJudul());
         binding.MoviesStatus.setText(moviesModelEntitiy.getStatus());
-        binding.MoviesDeskripsi.setText(moviesModelEntitiy.getDeskripsi());
+        String foto=moviesModelEntitiy.getFoto();
+        try {
+            binding.gambarMovie.setImageURI(Uri.parse(foto));
+        }catch (Exception e){
+            binding.gambarMovie.setImageResource(R.drawable.poster);
+        }
         int skor=moviesModelEntitiy.getBintang();
 
         for(int i=0;i<skor;i++){
@@ -97,8 +101,6 @@ class ViewHolder implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int clicked=v.getId();
-        Bundle pack=new Bundle();
-        pack.putInt("index",index);
         if(clicked==binding.boxMovies.getId()){
             presenter.openMovie(index);
         }else {

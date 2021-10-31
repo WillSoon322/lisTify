@@ -1,43 +1,48 @@
 package com.example.listify
 
 import android.os.Bundle
-import com.example.listify.LeftDrawer
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.listify.R
+import com.example.listify.databinding.FragmentLeftDrawerBinding
 
 /**
  * A simple [Fragment] subclass.
  * Use the [LeftDrawer.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LeftDrawer : Fragment() {
+class LeftDrawer : Fragment(), View.OnClickListener {
+    private lateinit var binding: FragmentLeftDrawerBinding
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_left_drawer, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        this.binding= FragmentLeftDrawerBinding.inflate(layoutInflater)
+        binding.HistoryDrawer.setOnClickListener(this)
+        binding.ExitDrawer.setOnClickListener(this)
+        binding.DaftarDrawer.setOnClickListener(this)
+        binding.HomeDrawer.setOnClickListener(this)
+
+
+
+        return binding.root;
     }
 
-    companion object {
-        // TODO: Rename parameter arguments, choose names that match
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
-
-
-        fun newInstance(param1: String?, param2: String?): LeftDrawer {
-            val fragment = LeftDrawer()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
-            fragment.arguments = args
-            return fragment
+    override fun onClick(v: View?) {
+        if(v==binding.HistoryDrawer){
+            parentFragmentManager.setFragmentResult("openLog",Bundle());
+        }else if(v==binding.ExitDrawer){
+            activity?.finish();
+            System.exit(0);
+        }else if(v==binding.DaftarDrawer){
+            parentFragmentManager.setFragmentResult("balik",Bundle())
+        }else if(v==binding.HomeDrawer){
+            parentFragmentManager.setFragmentResult("homeBalik",Bundle())
         }
+
+
     }
+
+
 }
